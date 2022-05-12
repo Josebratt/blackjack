@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstantsService } from '../_services/constants.service';
 
 @Component({
   selector: 'app-start',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
+  constructor(public constantsService: ConstantsService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
 }
