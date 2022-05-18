@@ -1,6 +1,11 @@
 <header>
   <h1>{{ title }}</h1>
 </header>
-<app-start></app-start>
-<app-game></app-game>
-<app-end></app-end>
+
+<app-start *ngIf="!gameStarted && !gameEnded"  (start)="startGame()"></app-start>
+<app-game *ngIf="gameStarted"></app-game>
+<app-end *ngIf="gameEnded"></app-end>
+
+<!-- <app-start [hidden]="hideStart" [attr.aria-hidden]="hideStart" (start)="startGame()"></app-start>
+<app-game [hidden]="hideGame" [attr.aria-hidden]="hideGame"></app-game>
+<app-end [hidden]="hideEnd" [attr.aria-hidden]="hideEnd"></app-end> -->
