@@ -1,13 +1,13 @@
 <form>
-    <h2>Play 21 or bust! Beat the dealer to win big</h2>
-    <div class="row">
-        <label for="name">Player name: </label>
+    <h2>{{ constantsService.PLAYER_TITLE }}</h2>
+    <div class="row" [ngClass]="states">
+        <label for="name">{{ constantsService.PLAYER_NAME_LABEL }}</label>
         <input type="text" name="name">
     </div>
     <div class="row">
-        <label for="aces">Aces high?: </label>
+        <label for="aces">{{ constantsService.ACES_HIGH_LABEL }}</label>
         <input type="checkbox" name="name">
-        <span class="checkbox"></span>
+        <span class="checkbox" [class.checked]="acesHigh" (click)="toggleAces()"></span>
     </div>
-    <button>Start!</button>
+    <button [disabled]="disableButton" (click)="startGame($event)">{{ constantsService.START_LABEL }}</button>
 </form>
