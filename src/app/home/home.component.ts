@@ -18,15 +18,17 @@ export class HomeComponent implements OnInit {
   gameStarted = false;
   gameEnded = false;
 
+  public players: any[] = [];
+
   ngOnInit(): void {
     const deck = new Deck(false);
     deck.shuffle();
 
-    const players = [];
-    players.push(new Player('Dealer'));
-    players.push(new Player('Dan'));
+    // const players = [];
+    this.players.push(new Player('Dealer'));
 
-    deck.deal(players, 2);
+
+    deck.deal(this.players, 2);
 
     // console.log(players[1]);
   }
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
   startGame() {
     this.gameStarted = true;
     this.gameEnded = false;
+    this.players.push(new Player('Dan'));
     // this.hideStart = true;
     // this.hideEnd = false;
   }
