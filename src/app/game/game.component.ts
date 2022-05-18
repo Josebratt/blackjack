@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Deck } from '../_models/deck';
+import { Player } from '../_models/player';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
+  player!: Player;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.player = new Player('Dan');
+
+    const deck = new Deck(false);
+    deck.shuffle();
+    deck.deal([this.player], 2);
+
+    console.log(this.player.hand);
+    
+    
   }
 
 }
