@@ -3,7 +3,7 @@
 </header>
 
 <app-start *ngIf="!gameStarted && !gameEnded"  (start)="startGame()"></app-start>
-<app-game *ngIf="gameStarted"></app-game>
+<app-game *ngIf="gameStarted" [player]="players[1]"></app-game>
 <app-end *ngIf="gameEnded"></app-end>
 
 <!-- <app-start [hidden]="hideStart" [attr.aria-hidden]="hideStart" (start)="startGame()"></app-start>
