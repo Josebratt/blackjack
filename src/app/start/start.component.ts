@@ -15,7 +15,9 @@ export class StartComponent implements OnInit {
 
   disableButton: boolean = false;
   acesHigh: boolean = false;
+  easyMode: boolean = false;
   states!: object;
+  playerName: string = '';
 
   constructor(public constantsService: ConstantsService) {}
 
@@ -24,16 +26,29 @@ export class StartComponent implements OnInit {
 
     this.states = {
       warning: true,
-      error: false
-    }
+      error: false,
+    };
   }
 
-  startGame(event: any) {
+  startGame(event: any): void {
     event.preventDefault();
-    this.start.emit();
+    let emitData: any = {
+      playerName: this.playerName,
+      acesHigh: this.acesHigh,
+      easyMode: this.easyMode
+    }
+    this.start.emit(emitData);
   }
 
-  toggleAces() {
+  toggleAces(): void {
     this.acesHigh = !this.acesHigh;
+  }
+
+  toggleMode(): void {
+    this.easyMode = !this.easyMode;
+  }
+
+  setPlayerName(name: string): void {
+    this.playerName = name;
   }
 }
