@@ -6,6 +6,7 @@ import { StartComponent } from './start/start.component';
 import { EndComponent } from './end/end.component';
 import { GameComponent } from './game/game.component';
 import { ControlsComponent } from './controls/controls.component';
+import { FaceCardsPipe } from './_pipes/face-cards.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ControlsComponent } from './controls/controls.component';
     StartComponent,
     EndComponent,
     GameComponent,
-    ControlsComponent
+    ControlsComponent,
+    FaceCardsPipe
   ],
   imports: [
     BrowserModule
