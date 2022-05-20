@@ -16,9 +16,9 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     // this.player = new Player('Dan');
 
-    // const deck = new Deck(false);
-    // deck.shuffle();
-    // deck.deal([this.player], 2);
+    const deck = new Deck(false);
+    deck.shuffle();
+    deck.deal([this.player], 2);
 
     // console.log(this.player.hand);
     
