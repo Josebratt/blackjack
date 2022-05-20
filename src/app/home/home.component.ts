@@ -2,6 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Deck } from '../_models/deck';
 import { Player } from '../_models/player';
+import { FaceCardsPipe } from '../_pipes/face-cards.pipe';
 
 @Component({
   selector: 'app-home',
@@ -20,23 +21,25 @@ export class HomeComponent implements OnInit {
 
   public players: any[] = [];
 
+  pipe!: FaceCardsPipe;
+
   ngOnInit(): void {
-    const deck = new Deck(false);
-    deck.shuffle();
-
-    // const players = [];
+      // const players = [];
     this.players.push(new Player('Dealer'));
-
-
-    deck.deal(this.players, 2);
-
-    // console.log(players[1]);
+    this.pipe = new FaceCardsPipe();
   }
 
-  startGame() {
+  startGame(event: any) {
     this.gameStarted = true;
     this.gameEnded = false;
-    this.players.push(new Player('Dan'));
+
+    this.players.push(new Player(event.playerName));
+    const deck = new Deck(false);
+    deck.cards = this.pipe.transform(deck.cards, false);
+
+    deck.shuffle();
+    deck.deal(this.players, 2);
+
     // this.hideStart = true;
     // this.hideEnd = false;
   }
