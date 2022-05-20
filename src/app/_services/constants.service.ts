@@ -13,6 +13,7 @@ export class ConstantsService {
   public PLAYER_NAME_LABEL: string;
   public ACES_HIGH_LABEL: string;
   public START_LABEL: string;
+  public EASY_MODE_LABEL: string;
 
   constructor() {
     this.COLORS = ['Black', 'Red'];
@@ -24,5 +25,6 @@ export class ConstantsService {
     this.PLAYER_NAME_LABEL = 'Player name:';
     this.ACES_HIGH_LABEL = 'Aces high?:';
     this.START_LABEL = 'Start!';
+    this.EASY_MODE_LABEL = 'Easy Mode'
   }
 }
