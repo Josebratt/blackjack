@@ -1,13 +1,18 @@
-<form>
+<form #playerForm="ngForm">
     <h2>{{ constantsService.PLAYER_TITLE }}</h2>
     <div class="row" [ngClass]="states">
         <label for="name">{{ constantsService.PLAYER_NAME_LABEL }}</label>
-        <input type="text" name="name">
+        <input type="text" name="name" [(ngModel)]="playerName" >
     </div>
     <div class="row">
-        <label for="aces">{{ constantsService.ACES_HIGH_LABEL }}</label>
-        <input type="checkbox" name="name">
+        <label for="acesHigh">{{ constantsService.ACES_HIGH_LABEL }}</label>
+        <input type="checkbox" name="acesHigh">
         <span class="checkbox" [class.checked]="acesHigh" (click)="toggleAces()"></span>
+    </div>
+    <div class="row">
+        <label for="easyMode">{{ constantsService.EASY_MODE_LABEL }}</label>
+        <input type="checkbox" name="easyMode">
+        <span class="checkbox" [class.checked]="easyMode" (click)="toggleMode()"></span>
     </div>
     <button [disabled]="disableButton" (click)="startGame($event)">{{ constantsService.START_LABEL }}</button>
 </form>
