@@ -1,8 +1,9 @@
 <div class="feedback-form">
-    <form action="">
-        <div class="row">
+    <form [formGroup]="feedbackForm">
+        <div class="row" [ngClass]="{ 'error': feedbackForm.get('name').touched && feedbackForm.get('name').invalid}">
             <label for="name">Name</label>
             <input type="text" formControlName="name">
+            <span *ngIf="feedbackForm.get('name').touched && feedbackForm.get('name').invalid">name is required</span>
         </div>
         <div class="row">
             <label for="email">Email</label>
