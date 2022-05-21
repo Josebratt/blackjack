@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
 
   pipe!: FaceCardsPipe;
 
+  viewFeedbackForm: boolean = false;
+
   ngOnInit(): void {
       // const players = [];
     this.players.push(new Player('Dealer'));
@@ -42,5 +44,13 @@ export class HomeComponent implements OnInit {
 
     // this.hideStart = true;
     // this.hideEnd = false;
+  }
+
+  showFeedback() {
+    this.viewFeedbackForm = true;
+  }
+
+  hidefeedbackForm() {
+    this.viewFeedbackForm = true;
   }
 }
