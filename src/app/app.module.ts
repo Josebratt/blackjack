@@ -7,7 +7,8 @@ import { EndComponent } from './end/end.component';
 import { GameComponent } from './game/game.component';
 import { ControlsComponent } from './controls/controls.component';
 import { FaceCardsPipe } from './_pipes/face-cards.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,13 @@ import { FormsModule } from '@angular/forms';
     EndComponent,
     GameComponent,
     ControlsComponent,
-    FaceCardsPipe
+    FaceCardsPipe,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
