@@ -1,8 +1,9 @@
-<form #playerForm="ngForm">
+<form #playerForm="ngForm" (submit)="startGame(playerForm)">
     <h2>{{ constantsService.PLAYER_TITLE }}</h2>
-    <div class="row" [ngClass]="states">
+    <div class="row" [ngClass]="{'error': !playerForm.valid && playerForm.touched}">
         <label for="name">{{ constantsService.PLAYER_NAME_LABEL }}</label>
         <input type="text" name="name" [(ngModel)]="playerName" >
+        <span *ngIf="!playerForm.valid&& playerForm.touched">Your name is required!</span>
     </div>
     <div class="row">
         <label for="acesHigh">{{ constantsService.ACES_HIGH_LABEL }}</label>
@@ -14,5 +15,5 @@
         <input type="checkbox" name="easyMode">
         <span class="checkbox" [class.checked]="easyMode" (click)="toggleMode()"></span>
     </div>
-    <button [disabled]="disableButton" (click)="startGame($event)">{{ constantsService.START_LABEL }}</button>
+    <button>{{ constantsService.START_LABEL }}</button>
 </form>
