@@ -1,66 +1,67 @@
 form {
-    text-align: center;
+  text-align: center;
 }
 
 label {
-    font-size: 2rem;
-    margin-right: 1rem;
-    float: left;
+  font-size: 2rem;
+  margin-right: 1rem;
+  float: left;
 
-    .warning & {
-        color: darkorange;
-    }
-
-    .error & {
-        color: red;
-    }
+  .error & {
+    color: red;
+  }
 }
 
-input {
-    width: 35%;
-    border: 1px solid #c7c5c7;
-    border-radius: 4px;
-    font-size: 2rem;
-    color: #666466;
-    padding: 5rem 1rem;
-    margin: 0;
-    float: right;
+input, textarea {
+  width: 35%;
+  border: 1px solid #c7c5c7;
+  border-radius: 4px;
+  font-size: 2rem;
+  color: #666466;
+  padding: 5rem 1rem;
+  margin: 0;
+  float: right;
 
-    &:focus, &:active {
-        border-color: #212021;
-        color: #212021;
-        outline: none;
-    }
+  &:focus,
+  &:active {
+    border-color: #212021;
+    color: #212021;
+    outline: none;
+  }
 
-    &[type=checkbox] {
-        display: none;
-    }
+  &[type="checkbox"] {
+    display: none;
+  }
 
-    .warning & {
-        color: darkorange;
-    }
-
-    .error & {
-        color: red;
-    }
+  .error & {
+    color: red;
+  }
 }
 
 button {
-    font-size: 2rem;
-    border: 2px solid #c7c5c7;
-    border-radius: 4px;
-    padding: 5rem 1rem;
-    color: #666466;
-    background: #fff;
-    cursor: pointer;
+  font-size: 2rem;
+  border: 2px solid #c7c5c7;
+  border-radius: 4px;
+  padding: 5rem 1rem;
+  color: #666466;
+  background: #fff;
+  cursor: pointer;
 
-    &:hover, &:active {
-        border-color: #212021;
-        color: #212021;
-    }
-    &:disabled {
-        opacity: .25;
-        pointer-events: none;
-    }
+  &:hover,
+  &:active {
+    border-color: #212021;
+    color: #212021;
+  }
+  &:disabled {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+}
 
+.error {
+  span {
+    float: right;
+    margin: 1em 1 em 0 0;
+    color: red;
+  }
 }
