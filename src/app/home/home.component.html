@@ -1,5 +1,7 @@
 <header>
   <h1>{{ title }}</h1>
+  <span (click)="showFeedback()" class="feedback-link">Feedback</span>
+  <app-feedback *ngIf="viewFeedbackForm" (closefeedbackForm)="hidefeedbackForm()"></app-feedback>
 </header>
 
 <app-start *ngIf="!gameStarted && !gameEnded"  (start)="startGame($event)"></app-start>
