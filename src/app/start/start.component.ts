@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { ConstantsService } from '../_services/constants.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class StartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  startGame(playerForm: FormGroup): void {
+  startGame(playerForm: NgForm): void {
     if (playerForm.valid) {
       let emitData: any = {
         playerName: this.playerName,
