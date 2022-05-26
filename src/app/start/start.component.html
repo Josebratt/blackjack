@@ -3,7 +3,7 @@
     <div class="row" [ngClass]="{'error': !playerForm.valid && playerForm.touched}">
         <label for="name">{{ constantsService.PLAYER_NAME_LABEL }}</label>
         <input type="text" name="name" [(ngModel)]="playerName" >
-        <span *ngIf="!playerForm.valid&& playerForm.touched">Your name is required!</span>
+        <span *ngIf="!playerForm.valid && playerForm.touched">Your name is required!</span>
     </div>
     <div class="row">
         <label for="acesHigh">{{ constantsService.ACES_HIGH_LABEL }}</label>
